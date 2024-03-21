@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import re
 import dj_database_url
 
 if os.path.exists('env.py'):
@@ -64,6 +65,7 @@ ALLOWED_HOSTS = ['8000-augustslett-beehiveback-9vq0t41vg9s.ws-eu110.gitpod.io', 
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-augustsletto-djangorest-g4aditusjc6.ws-eu110.gitpod.io',
+    'https://beehive-social-3ec964865be0.herokuapp.com/',
 ]
 # Application definition
 
