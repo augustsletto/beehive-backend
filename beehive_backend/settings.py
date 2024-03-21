@@ -61,11 +61,15 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-augustslett-beehiveback-9vq0t41vg9s.ws-eu110.gitpod.io', 'beehive-social-3ec964865be0.herokuapp.com/']
+ALLOWED_HOSTS = ['8000-augustslett-beehiveback-9vq0t41vg9s.ws-eu110.gitpod.io', '.herokuapp.com']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-augustsletto-djangorest-g4aditusjc6.ws-eu110.gitpod.io',
-    'https://beehive-social-3ec964865be0.herokuapp.com/',
+    "https://*.codeanyapp.com",
+    "https://*.herokuapp.com",
+    "https://*.gitpod.io",
+
+    
 ]
 # Application definition
 
