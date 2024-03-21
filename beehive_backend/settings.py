@@ -59,7 +59,7 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEV' in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-augustslett-beehiveback-9vq0t41vg9s.ws-eu110.gitpod.io', 'beehive-social-3ec964865be0.herokuapp.com/']
 
