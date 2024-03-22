@@ -62,7 +62,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
-    'localhost',
+    '8000-augustslett-beehiveback-9vq0t41vg9s.ws-eu110.gitpod.io',
     'https://beehive-social-3ec964865be0.herokuapp.com'
 ]
 
@@ -121,7 +121,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'beehive.backend.urls'
+ROOT_URLCONF = 'beehive_backend.urls'
 
 TEMPLATES = [
     {
@@ -139,7 +139,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'beehive.backend.wsgi.application'
+WSGI_APPLICATION = 'beehive_backend.wsgi.application'
 
 
 # Database
