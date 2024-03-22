@@ -63,7 +63,7 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = [
     '8000-augustslett-beehiveback-9vq0t41vg9s.ws-eu110.gitpod.io',
-    'https://beehive-social-3ec964865be0.herokuapp.com'
+    'beehive-social-3ec964865be0.herokuapp.com'
 ]
 
 if 'CLIENT_ORIGIN' in os.environ:
