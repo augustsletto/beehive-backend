@@ -81,6 +81,9 @@ if 'CLIENT_ORIGIN_DEV' in os.environ:
 
 CORS_ALLOW_CREDENTIALS = True
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-augustslett-beehiveback-p02o8jf3j0i.ws-eu110.gitpod.io'
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -108,6 +111,7 @@ INSTALLED_APPS = [
     'comments',
     'likes',
     'followers',
+    'base',
 ]
 SITE_ID = 1
 MIDDLEWARE = [
