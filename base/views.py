@@ -9,7 +9,7 @@ from .products import products
 from .serializers import ProductSerializer
 
 
-    return Response(routes)
+
 @api_view(['GET'])
 def getProducts(request):
     products = Product.objects.all()
