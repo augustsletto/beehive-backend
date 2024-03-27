@@ -30,11 +30,18 @@ def getRoutes(request):
     ]
 
     return Response(routes)
+
 @api_view(['GET'])
-def getProducts(request):
-    products = Product.objects.all()
-    serializer = ProductSerializer(products, many=True)
-    return Response(serializer.data)
+def getProduct(request, pk):
+    try:
+        product = Product.objects.get(pk=pk)
+        serializer = ProductSerializer(product)
+        return Response(serializer.data)
+    except Product.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+
 
 @api_view(['GET'])
 def getProduct(request, pk):
