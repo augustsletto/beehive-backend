@@ -111,7 +111,7 @@ INSTALLED_APPS = [
     'comments',
     'likes',
     'followers',
-    'base',
+    'base.apps.BaseConfig',
 ]
 SITE_ID = 1
 MIDDLEWARE = [
