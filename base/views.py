@@ -5,7 +5,7 @@ from rest_framework.response import Response
 
 from .models import Product
 
-from .products import products
+from .serializers import ProductSerializer
 
 
 @api_view(['GET'])
@@ -29,16 +29,41 @@ def getRoutes(request):
     ]
 
     return Response(routes)
+
+    
 @api_view(['GET'])
-def getProducts(request):
-    return Response(products)
+def get_products(request):
+    products = Product.objects.all()
+    serializer = ProductSerializer(products, many=True)
+    return Response(serializer.data)
+
 
 @api_view(['GET'])
-def getProduct(request, pk):
-    product = None
-    for i in products:
-        if i['_id'] == pk:
-            product = i
-            break
+def get_product(request, pk):
+    product = Product.objects.get(_id=pk)
+    serializer = ProductSerializer(product, many=False)
+    return Response(serializer.data)
 
-    return Response(product)
+
+@api_view(['POST'])
+def create_product(request):
+    serializer = ProductSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+
+@api_view(['PUT'])
+def update_product(request, pk):
+    product = Product.objects.get(_id=pk)
+    serializer = ProductSerializer(instance=product, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+
+@api_view(['DELETE'])
+def delete_product(request, pk):
+    product = Product.objects.get(_id=pk)
+    product.delete()
+    return Response('Product deleted successfully')
