@@ -6,7 +6,6 @@ from rest_framework.response import Response
 from .models import Product
 
 from .products import products
-from .serializers import ProductSerializer
 
 
 @api_view(['GET'])
@@ -30,18 +29,9 @@ def getRoutes(request):
     ]
 
     return Response(routes)
-
 @api_view(['GET'])
-def getProduct(request, pk):
-    try:
-        product = Product.objects.get(pk=pk)
-        serializer = ProductSerializer(product)
-        return Response(serializer.data)
-    except Product.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
-
-
-
+def getProducts(request):
+    return Response(products)
 
 @api_view(['GET'])
 def getProduct(request, pk):
